@@ -6,6 +6,9 @@ class PersonBuilder {
     private var skills: Skills? = null
     private var languages: Languages? = null
 
+    private val skillsBuilder: SkillsBuilder = SkillsBuilder()
+    private val languagesBuilder: LanguagesBuilder = LanguagesBuilder()
+
     fun name(value: String) {
         name = value
     }
@@ -15,11 +18,11 @@ class PersonBuilder {
     }
 
     fun skills(block: SkillsBuilder.() -> Unit) {
-        skills = SkillsBuilder().apply(block).build()
+        skills = skillsBuilder.apply(block).build()
     }
 
     fun languages(block: LanguagesBuilder.() -> Unit) {
-        languages = LanguagesBuilder().apply(block).build()
+        languages = languagesBuilder.apply(block).build()
     }
 
     fun build(): Person {

@@ -1,10 +1,12 @@
 package dsl
 
 data class Skills(
-    val soft: List<Skill>,
-    val hard: List<Skill>
+    val skills: List<Skill>
 )
 
-data class Skill(
-    val title: String
-)
+sealed class Skill {
+    abstract val title: String
+
+    data class Soft(override val title: String) : Skill()
+    data class Hard(override val title: String) : Skill()
+}

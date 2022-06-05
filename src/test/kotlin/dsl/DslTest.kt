@@ -53,9 +53,9 @@ class DslTest {
                 hard("Kotlin")
             }
         }
-        assertThat(person.skills?.soft?.get(0)?.title).isEqualTo("A passion for problem solving")
-        assertThat(person.skills?.soft?.get(1)?.title).isEqualTo("Good communication skills")
-        assertThat(person.skills?.hard?.get(0)?.title).isEqualTo("Kotlin")
+        assertThat(person.skills?.skills?.get(0)?.title).isEqualTo("A passion for problem solving")
+        assertThat(person.skills?.skills?.get(1)?.title).isEqualTo("Good communication skills")
+        assertThat(person.skills?.skills?.get(2)?.title).isEqualTo("Kotlin")
     }
 
     @Test
